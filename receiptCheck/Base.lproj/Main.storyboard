@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="receiptCheck" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Fn-pG-NRd">
+                                <rect key="frame" x="107.5" y="60" width="105" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <state key="normal" title="Fetch Receipt"/>
+                                <connections>
+                                    <action selector="fetchReceiptTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Si7-3d-JxQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzM-mM-gxy">
+                                <rect key="frame" x="55" y="132" width="210" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Send Receipt to Server Check"/>
+                                <connections>
+                                    <action selector="sendReceiptToServerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cEh-d0-WCS"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="stw-4r-rkX">
+                                <rect key="frame" x="273" y="137" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="8Fn-pG-NRd" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="8MI-PQ-K6V"/>
+                            <constraint firstItem="8Fn-pG-NRd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="AEs-8u-woU"/>
+                            <constraint firstItem="stw-4r-rkX" firstAttribute="leading" secondItem="vzM-mM-gxy" secondAttribute="trailing" constant="8" id="Oev-Xj-eJ5"/>
+                            <constraint firstItem="vzM-mM-gxy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="auw-78-7HS"/>
+                            <constraint firstItem="vzM-mM-gxy" firstAttribute="top" secondItem="8Fn-pG-NRd" secondAttribute="bottom" constant="40" id="bzN-YW-bmI"/>
+                            <constraint firstItem="stw-4r-rkX" firstAttribute="centerY" secondItem="vzM-mM-gxy" secondAttribute="centerY" id="wC7-G5-qWL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="stw-4r-rkX" id="Sk4-Yu-Vc6"/>
+                        <outlet property="fetchReceiptButton" destination="8Fn-pG-NRd" id="pkT-w1-la7"/>
+                        <outlet property="sendReceiptButton" destination="vzM-mM-gxy" id="PxI-dw-R9B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
